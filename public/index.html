@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="Rails5">
+  <head>
+    <meta charset="utf-8">
+    <title>Rails 5 API App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src='js/app.js'></script>
+    <script src='js/rails5Controller.js'></script>
+  </head>
+  <body ng-controller="rails5Controller as rails">
+    <h1>Rails 5</h1>
+    <!-- <ul ng-repeat="appointment in rails.appointments"> -->
+    <ul ng-repeat="doctor in rails.doctors">
+      <!-- <li>{{appointment.location}}</li> -->
+      <li>{{doctor.name}}</li>
+      <li>{{doctor.specialty}}</li>
+
+    </ul>
+    {{1 + 1}}
+  </body>
+</html>
