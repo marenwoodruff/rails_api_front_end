@@ -3,19 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>Rails 5 API App</title>
+    <link rel="stylesheet" type="text/css" href='css/main.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src='js/app.js'></script>
     <script src='js/rails5Controller.js'></script>
   </head>
   <body ng-controller="rails5Controller as rails">
-    <h1>Rails 5</h1>
-    <!-- <ul ng-repeat="appointment in rails.appointments"> -->
+    <h1>Patients, Doctors and Appointments</h1>
+    <div ng-repeat="appt in rails.appointments_with_names">
+      <p>
+        patient name: {{appt.patient_name}}<br />
+        day: {{appt.day}}<br />
+        location: {{appt.location}}<br />
+        doctor: {{appt.doctor_name}}<br />
+        reason: {{appt.reason}}
+      </p>
+    </div>
+    <!-- <ul ng-repeat="appt in rails.appointments_with_names">
+      <li>patient name: {{appt.patient_name}}</li>
+      <li>location: {{appt.day}}</li>
+      <li>location: {{appt.location}}</li>
+      <li>doctor: {{appt.doctor_name}}</li>
+      <li>reason: {{appt.reason}}</li>
+    </ul> -->
+    <h1>Doctors</h1>
     <ul ng-repeat="doctor in rails.doctors">
-      <!-- <li>{{appointment.location}}</li> -->
-      <li>{{doctor.name}}</li>
-      <li>{{doctor.specialty}}</li>
-
+      <li>name: {{doctor.name}}</li>
+      <li>specialty: {{doctor.specialty}}</li>
     </ul>
-    {{1 + 1}}
+    <h1>Patients</h1>
+    <ul ng-repeat="patient in rails.patients">
+      <li>name: {{patient.name}}</li>
+      <li>insurance co: {{patient.insurance_co}}</li>
+      <li>new patient: {{patient.new_patient}}</li>
+    </ul>
+    <h1>Appointments</h1>
+    <ul ng-repeat="appointment in rails.appointments">
+      <li>location: {{appointment.location}}</li>
+      <li>day: {{appointment.day}}</li>
+      <li>reason: {{appointment.reason}}</li>
+      <li>patient: {{appointment.patient_id}}</li>
+      <li>doctor: {{appointment.doctor_id}}</li>
+    </ul>
   </body>
 </html>
