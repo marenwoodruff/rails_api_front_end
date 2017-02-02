@@ -12,11 +12,11 @@
     <h1>Patients, Doctors and Appointments</h1>
     <div ng-repeat="appt in rails.appointments_with_names">
       <p>
-        patient name: {{appt.patient_name}}<br />
-        day: {{appt.day}}<br />
-        location: {{appt.location}}<br />
-        doctor: {{appt.doctor_name}}<br />
-        reason: {{appt.reason}}
+        <h3>{{appt.day}}</h3>
+        patient name: <strong>{{appt.patient_name}}</strong><br />
+        location: <strong>{{appt.location}}</strong><br />
+        doctor: <strong>{{appt.doctor_name}}</strong><br />
+        reason: <strong>{{appt.reason}}</strong>
       </p>
     </div>
     <!-- <ul ng-repeat="appt in rails.appointments_with_names">
